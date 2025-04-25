@@ -19,9 +19,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
 public class SistemaTareas extends JFrame {
+
+
     private GestorTareas gestor;
     private JTextField campoDescripcion;
     private DefaultListModel<Tarea> modeloTareasPendientes;
@@ -41,6 +42,9 @@ public class SistemaTareas extends JFrame {
         actualizarVistas();
     }
 
+    /**
+     * Configuración inicial de la ventana
+     */
     private void configurarVentana() {
         setTitle("Sistema de Gestión de Tareas");
         setSize(900, 600);
@@ -52,6 +56,9 @@ public class SistemaTareas extends JFrame {
         fuenteGrande = new Font("Arial", Font.BOLD, 18);
     }
 
+    /**
+     * Inicialización de los componentes de la ventana
+     */
     private void inicializarComponentes() {
         // Panel para agregar tareas
         campoDescripcion = new JTextField(25);
@@ -73,6 +80,9 @@ public class SistemaTareas extends JFrame {
         etiquetaProximaTarea.setFont(fuenteNormal);
     }
 
+    /**
+     * Agregar componentes a la ventana
+     */
     private void agregarComponentes() {
         // Panel para agregar tareas
         JPanel panelAgregar = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -154,6 +164,9 @@ public class SistemaTareas extends JFrame {
         botonEliminar.addActionListener(e -> eliminarTarea());
     }
 
+    /**
+     * Agregar listeners a los botones
+     */
     private void agregarListeners() {
         listaTareasPendientes.addMouseListener(new MouseAdapter() {
             @Override
@@ -165,6 +178,9 @@ public class SistemaTareas extends JFrame {
         });
     }
 
+    /**
+     * Agregar una tarea
+     */
     private void agregarTarea() {
         String descripcion = campoDescripcion.getText().trim();
         if (!descripcion.isEmpty()) {
@@ -178,6 +194,9 @@ public class SistemaTareas extends JFrame {
         }
     }
 
+    /**
+     * Marcar una tarea como completada
+     */
     private void marcarComoCompletada() {
         if (!modeloTareasPendientes.isEmpty()) {
             gestor.marcarComoCompletada();
@@ -185,6 +204,9 @@ public class SistemaTareas extends JFrame {
         }
     }
 
+    /**
+     * Eliminar una tarea
+     */
     private void eliminarTarea() {
         if (!modeloTareasPendientes.isEmpty()) {
             gestor.eliminarTarea();
@@ -192,6 +214,9 @@ public class SistemaTareas extends JFrame {
         }
     }
 
+    /**
+     * Actualizar las vistas de las tareas
+     */
     private void actualizarVistas() {
         // Actualizar lista de tareas pendientes
         modeloTareasPendientes.clear();
@@ -222,12 +247,5 @@ public class SistemaTareas extends JFrame {
         } else {
             etiquetaProximaTarea.setText("No hay tareas pendientes");
         }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            SistemaTareas sistema = new SistemaTareas();
-            sistema.setVisible(true);
-        });
     }
 } 
