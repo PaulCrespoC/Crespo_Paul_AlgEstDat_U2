@@ -10,9 +10,9 @@ Sistema simple para gestionar tareas usando pilas y colas como estructuras de da
 4. **Ver próxima tarea**: Muestra la tarea en la parte superior de la pila
 
 ## Ejecución
-
+Para compilarlo en un JAR se ejecuto el siguiente comando para generar un ejecutable capaz de correr en diferentes plataformas
 ```
-java tareas.Main
+java -jar Crespo_Paul_AlgEstDat_U2-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
 
 ## Uso
