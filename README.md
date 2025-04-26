@@ -12,7 +12,11 @@ Sistema simple para gestionar tareas usando pilas y colas como estructuras de da
 ## Ejecución
 Para compilarlo en un JAR se ejecuto el siguiente comando para generar un ejecutable capaz de correr en diferentes plataformas
 ```
-java -jar Crespo_Paul_AlgEstDat_U2-1.0-SNAPSHOT-jar-with-dependencies.jar
+mvn jar:jar
+```
+Para ejecutar este JAR se utiliza
+```
+java -jar app.jar
 ```
 
 ## Uso
@@ -28,4 +32,4 @@ java -jar Crespo_Paul_AlgEstDat_U2-1.0-SNAPSHOT-jar-with-dependencies.jar
 - **Cola.java**: Implementación personalizada de una cola
 - **GestorTareas.java**: Maneja las tareas usando pila y cola
 - **SistemaTareas.java**: Interfaz gráfica
-- **Main.java**: Punto de entrada de la aplicación 
+- **Main.java**: Punto de entrada de la aplicación
